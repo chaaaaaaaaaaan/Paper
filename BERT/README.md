@@ -24,7 +24,7 @@ L: The number of layers, H: Hidden size, A: The number of self-attention heads
 
 **Input/Output Representations**  
 BERT가 다양한 downtream task를 다루기 위해 입력이 한 문장인지 여러 문장이 확실하게 구분할 수 있어야 합니다. BERT는 30,000개의 단어로 WordPiece embedding을 사용했습니다. 모든 문장의 첫 시작은 [CLS]라는 특별 토큰으로 시작합니다. 은닉층의 마지막과 대응되는 이 토큰은 입력 시퀀스의 모든 정보를 반영하여 분류문제를 푸는데 사용됩니다. 여러 문장은 하나의 시퀀스로 되어있습니다. 이를 구분하기 위해 두 가지 방법이 있습니다. 첫번째는 두 문장 사이에 있는 특별 토큰인 [SEP]로 구분하는 방법이고, 두번째는 모든 토큰에 A문장인지 B문장인지 가리키는 임베딩을 추가하는 방법입니다.(첫 번째 문장은 0, 두 번째 문장은 1을 입력합니다.) Input Embedding은 token, segment, position embeddings의 합으로 구해집니다.  
-Figure 1.에서처럼 Input Embeddings는 $E$, [CLS] token의 final hidden vector는 $C \in R^H$, $i^th$ final hidden vector 는 $T_i \in R^H$로 표현됩니다.
+Figure 1.에서처럼 Input Embeddings는 $$E$$, [CLS] token의 final hidden vector는 $C \in R^H$, $i^th$ final hidden vector 는 $T_i \in R^H$로 표현됩니다.
  ![fig2](https://github.com/chaaaaaaaaaaan/Paper/blob/main/BERT/resource/fig2.png?raw=true)  
 
 ```python
